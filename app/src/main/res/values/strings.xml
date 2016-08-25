@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">DevAge</string>
+    <string name="app_name">Agenda Developer</string>
+    <string name="app_txt_portada">Bienvenido a la agenda para desarrolladores Web, Android y Java.\n\n
+        Pulse en el botón para acceder a aplicación.\n\n
+        Curso de Perfeccionamiento Android. EII UEX.
+    </string>
+
+    <string name="btn_entrar">Entrar</string>
+    <string name="btn_inciarsesion">Iniciar Sesión</string>
+    <string name="btn_registro">Registro</string>
+
+    <string name="cmp_nombre">Nombre</string>
+    <string name="cmp_correo">Correo Electrónico</string>
+    <string name="cmp_contraseña">Contraseña</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="txtmenuadd">Añadir</string>
+    <string name="txtmenubuscar">Buscar</string>
+    <string name="txtmenusalir">Salir</string>
+
+    <string name="errorloginemail">Escriba una dirección de correo válida.</string>
+    <string name="errorloginpass">Escriba una contraseña válida.</string>
+
+    <string name="txtnocuenta">¿No tienes cuenta? Crea una ahora.</string>
+    <string name="txtnoregistro">¿No tienes cuenta? Crea una ahora.</string>
 </resources>
