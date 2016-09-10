@@ -1,0 +1,61 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.antoniohorrillo.devage.activity.Principal_Fragment_Buscar"
+    android:id="@+id/fragmentbuscar">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <ImageView android:src="@drawable/devagebuscar"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/logo" />
+
+            <!-- Campo dni -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/cmpo_dni_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@style/ErrorCampos">
+                <EditText android:id="@+id/input_dni"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapWords"
+                    android:hint="Dni" />
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Botón Buscar -->
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btn_buscar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:padding="12dp"
+                android:text="@string/btn_buscar"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -27,4 +27,8 @@
         <item name="android:background">@color/primary</item>
     </style>
 
+    <style name="ErrorCampos" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:textColor">@color/monsoon</item>
+    </style>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.antoniohorrillo.devage;
+package com.antoniohorrillo.devage.model;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,7 +7,7 @@ import android.preference.PreferenceManager;
 /**
  * Created by antoniohh on 25/08/16.
  */
-public class SaveSharedPreference {
+public class Preferencias {
 
     static final String PREF_USER_NAME= "username";
 
