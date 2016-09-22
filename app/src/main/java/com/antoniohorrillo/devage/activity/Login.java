@@ -2,8 +2,10 @@ package com.antoniohorrillo.devage.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +28,6 @@ import com.android.volley.toolbox.Volley;
 import com.antoniohorrillo.devage.R;
 import com.antoniohorrillo.devage.model.Preferencias;
 import com.antoniohorrillo.devage.model.Cifrado;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -40,7 +41,7 @@ public class Login extends AppCompatActivity {
     private static final String URL = "http://devage.antoniohorrillo.com";
 
     /**
-     * Variables.
+     * Atributos.
      */
     private static final String TAG = "Login";
     private Button btnlogin;
@@ -211,7 +212,32 @@ public class Login extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Disable going back to the MainActivity
-        moveTaskToBack(true);
+        // moveTaskToBack(true);
+        //TODO: Cuadro de diálogo de advertencia al salir de la aplicación.
+        //TODO: Constructor del cuadro de diálogo.
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        //TODO: Título del cuadro de diálogo.
+        alertDialog.setTitle(getResources().getString(R.string.diagsalirtitulo));
+        //TODO: Mensaje del cuadro de diálogo.
+        alertDialog.setMessage(getResources().getString(R.string.diagsalirmensaje));
+        //TODO: Icono del cuadro de diálogo.
+        alertDialog.setIcon(R.drawable.ic_action_agenda);
+        //TODO: Botón Si.
+        alertDialog.setPositiveButton("Si",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        //TODO: Botón No.
+        alertDialog.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        //TODO: Mostramos el cuadro de diálogo.
+        alertDialog.show();
     }
 
     public void onLoginSuccess() {
@@ -240,10 +266,7 @@ public class Login extends AppCompatActivity {
      * @return
      */
     public boolean validar() {
-
-        /**
-         * Asignamos las Variables.
-         */
+        //TODO: Asignamos las Variables.
         txtemail = cmpemail.getEditText().getText().toString();
         txtpassword = cmppassword.getEditText().getText().toString();
         boolean valid = true;
@@ -261,7 +284,6 @@ public class Login extends AppCompatActivity {
         } else {
             cmppassword.setError(null);
         }
-
         return valid;
     }
 

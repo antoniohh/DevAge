@@ -33,15 +33,16 @@ public class Principal_Fragment_Detalle extends Fragment implements View.OnClick
     private String apellidos;
     private String email;
     private String especialidad;
-
     private TextView tvdni;
     private TextView tvnombre;
     private TextView tvapellidos;
     private TextView tvemail;
     private TextView tvespecialidad;
-
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Constructor vacío.
+     */
     public Principal_Fragment_Detalle() {
         // Required empty public constructor
     }

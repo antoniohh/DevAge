@@ -24,9 +24,11 @@ public class Principal_Fragment_Acerca extends Fragment implements View.OnClickL
 
     // TODO: Rename and change types of parameters
     private String respuesta;
-
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Constructor vacío.
+     */
     public Principal_Fragment_Acerca() {
         // Required empty public constructor
     }

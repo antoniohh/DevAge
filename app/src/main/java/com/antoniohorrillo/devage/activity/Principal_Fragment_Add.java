@@ -39,9 +39,11 @@ public class Principal_Fragment_Add extends Fragment implements View.OnClickList
     private String txtoapellidos;
     private String txtoespecialidad;
     private String txtodni;
-
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Constructor vacío.
+     */
     public Principal_Fragment_Add() {
         // Required empty public constructor
     }
@@ -75,7 +77,6 @@ public class Principal_Fragment_Add extends Fragment implements View.OnClickList
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.activity_principal_fragment_add, container, false);
         view = inflater.inflate(R.layout.activity_principal_fragment_add, container, false);
         btn_registro = (Button) view.findViewById(R.id.btn_registro);
         btn_registro.setOnClickListener(this);
@@ -85,7 +86,6 @@ public class Principal_Fragment_Add extends Fragment implements View.OnClickList
     // TODO: Rename method, update argument and hook method into UI event
     @Override
     public void onClick(View v) {
-
         cmponombre = (TextInputLayout)getActivity().findViewById(R.id.cmpo_nombre_wrapper);
         cmpoemail = (TextInputLayout)getActivity().findViewById(R.id.cmpo_email_wrapper);
         cmpoapellidos = (TextInputLayout)getActivity().findViewById(R.id.cmpo_apellidos_wrapper);
@@ -106,6 +106,10 @@ public class Principal_Fragment_Add extends Fragment implements View.OnClickList
         }
     }
 
+    /**
+     * Método validación de campos de registro.
+     * @return
+     */
     public boolean validate() {
 
         boolean valid = true;
@@ -144,7 +148,6 @@ public class Principal_Fragment_Add extends Fragment implements View.OnClickList
         } else {
             cmpoespecialidad.setError(null);
         }
-
         return valid;
     }
 

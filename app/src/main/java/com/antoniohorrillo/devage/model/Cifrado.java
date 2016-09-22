@@ -10,13 +10,26 @@ import java.util.Formatter;
  */
 public class Cifrado {
 
+    /**
+     * Atributos.
+     */
     private String sha1 = "";
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     public String getSha1(String password) {
         encryptPassword (password);
         return sha1;
     }
 
+    /**
+     *
+     * @param password
+     * @return
+     */
     private String encryptPassword (String password) {
 
         try {
@@ -37,6 +50,11 @@ public class Cifrado {
         return sha1;
     }
 
+    /**
+     *
+     * @param hash
+     * @return
+     */
     private static String byteToHex(final byte[] hash) {
 
         Formatter formatter = new Formatter();

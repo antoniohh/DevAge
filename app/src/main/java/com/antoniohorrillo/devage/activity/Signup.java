@@ -2,8 +2,10 @@ package com.antoniohorrillo.devage.activity;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -232,14 +234,38 @@ public class Signup extends AppCompatActivity {
         } else {
             cmpopassword.setError(null);
         }
-
         return valid;
     }
 
     @Override
     public void onBackPressed() {
         // Disable going back to the MainActivity
-        moveTaskToBack(true);
+        // moveTaskToBack(true);
+        //TODO: Cuadro de diálogo de advertencia al salir de la aplicación.
+        //TODO: Constructor del cuadro de diálogo.
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        //TODO: Título del cuadro de diálogo.
+        alertDialog.setTitle(getResources().getString(R.string.diagsalirtitulo));
+        //TODO: Mensaje del cuadro de diálogo.
+        alertDialog.setMessage(getResources().getString(R.string.diagsalirmensaje));
+        //TODO: Icono del cuadro de diálogo.
+        alertDialog.setIcon(R.drawable.ic_action_agenda);
+        //TODO: Botón Si.
+        alertDialog.setPositiveButton("Si",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+        //TODO: Botón No.
+        alertDialog.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        //TODO: Mostramos el cuadro de diálogo.
+        alertDialog.show();
     }
 
     private void ocultarTeclado() {

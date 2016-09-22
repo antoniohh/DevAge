@@ -7,12 +7,34 @@ import java.io.Serializable;
  */
 public class Developer implements Serializable {
 
+    /**
+     * Variables.
+     */
     private String dni;
     private String nombre;
     private String apellidos;
     private String email;
     private String especialidad;
 
+    /**
+     * Constructor de la clase Developer.
+     * @param dni
+     * @param nombre
+     * @param apellidos
+     * @param email
+     * @param especialidad
+     */
+    public Developer(String dni, String nombre, String apellidos, String email, String especialidad) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.especialidad = especialidad;
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // Inicio de los métodos Getter and Setter de los Atributos de la clase Developer.
+    ////////////////////////////////////////////////////////////////////////////////////////////////
     public String getDni() {
         return dni;
     }
@@ -52,12 +74,7 @@ public class Developer implements Serializable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public Developer(String dni, String nombre, String apellidos, String email, String especialidad) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.email = email;
-        this.especialidad = especialidad;
-    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+    // Fin de los métodos Getter and Setter de los Atributos de la clase Developer.
+    ////////////////////////////////////////////////////////////////////////////////////////////////
 }

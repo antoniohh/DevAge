@@ -30,9 +30,11 @@ public class Principal_Fragment_Buscar extends Fragment implements View.OnClickL
 
     // TODO: Rename and change types of parameters
     private String respuesta;
-
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Constructor vacío.
+     */
     public Principal_Fragment_Buscar() {
         // Required empty public constructor
     }
@@ -66,7 +68,6 @@ public class Principal_Fragment_Buscar extends Fragment implements View.OnClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.activity_principal_fragment_buscar, container, false);
         view = inflater.inflate(R.layout.activity_principal_fragment_buscar, container, false);
         btn_buscar = (Button) view.findViewById(R.id.btn_buscar);
         btn_buscar.setOnClickListener(this);

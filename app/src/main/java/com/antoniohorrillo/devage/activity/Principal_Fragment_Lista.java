@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import com.antoniohorrillo.devage.R;
 import com.antoniohorrillo.devage.model.Developer;
-import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -36,9 +35,11 @@ public class Principal_Fragment_Lista extends ListFragment implements AdapterVie
     private ArrayList<Developer> developers;
     private ArrayList<String> listado;
     private String respuesta;
-
     private OnFragmentInteractionListener mListener;
 
+    /**
+     * Constructor vacío.
+     */
     public Principal_Fragment_Lista() {
         // Required empty public constructor
     }
@@ -47,15 +48,15 @@ public class Principal_Fragment_Lista extends ListFragment implements AdapterVie
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param developers Parameter 1.
+     * @param listado Parameter 1.
      * @param respuesta Parameter 2.
      * @return A new instance of fragment Principal_Fragment_Lista.
      */
     // TODO: Rename and change types and number of parameters
-    public static Principal_Fragment_Lista newInstance(ArrayList<Developer> developers, String respuesta) {
+    public static Principal_Fragment_Lista newInstance(ArrayList<String> listado, String respuesta) {
         Principal_Fragment_Lista fragment = new Principal_Fragment_Lista();
         Bundle args = new Bundle();
-        args.putSerializable(DEVELOPERS, (Serializable) developers);
+        args.putStringArrayList(DEVELOPERS, listado);
         args.putString(RESPUESTA, respuesta);
         fragment.setArguments(args);
         return fragment;
@@ -78,17 +79,10 @@ public class Principal_Fragment_Lista extends ListFragment implements AdapterVie
         super.onActivityCreated(savedInstanceState);
         try {
             if (getArguments() != null) {
+                // TODO: Realiza la recepción y tratamiento del array de objetos Developers.
                 respuesta = getArguments().getString(RESPUESTA);
                 Log.i("Respuesta Lista",respuesta);
-
-                developers = (ArrayList<Developer>) getArguments().getSerializable(DEVELOPERS);
-
-                listado = new ArrayList<String>();
-
-                for (int i = 0; i < developers.size(); i++) {
-                    listado.add(developers.get(i).getNombre()+" "+developers.get(i).getApellidos());
-                }
-
+                listado = (ArrayList<String>) getArguments().getStringArrayList(DEVELOPERS);
                 ArrayAdapter<String> adaptador = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, listado);
                 setListAdapter(adaptador);
                 getListView().setOnItemClickListener(this);
